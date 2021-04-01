@@ -1,0 +1,33 @@
+version: 2
+jobs:
+  prepare:
+    docker:
+      - image: circleci/node:latest
+    steps:
+      - checkout
+      - run:
+          name: Generate temp file
+          command: |
+            mkdir -p tmp
+            echo "Hello CircleCI!!" > tmp/hello.txt
+      - persist_to_workspace:
+          root: .
+          paths:
+            - "tmp"
+  arm-runner:
+    machine: true
+    resource_class: mayoct/arm-runner
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run: cat tmp/hello.txt
+
+workflows:
+  version: 2
+  runner-workflow:
+    jobs:
+      - prepare
+      - arm-runner:
+          requires:
+            - prepare
