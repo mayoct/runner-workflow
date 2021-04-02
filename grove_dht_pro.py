@@ -36,6 +36,7 @@ THE SOFTWARE.
 '''
 import grovepi
 import math
+import time
 # Connect the Grove Temperature & Humidity Sensor Pro to digital port D4
 # This example uses the blue colored sensor.
 # SIG,NC,VCC,GND
@@ -59,3 +60,4 @@ while i < 10:
         print ("Error")
     finally:
         i += 1
+        time.sleep(1)
