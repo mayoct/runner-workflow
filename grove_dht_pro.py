@@ -50,7 +50,7 @@ i = 0
 
 while i < 10:
     try:
-        # This example uses the blue colored sensor. 
+        # This example uses the white colored sensor. 
         # The first parameter is the port, the second parameter is the type of sensor.
         [temp,humidity] = grovepi.dht(sensor,white)  
         if math.isnan(temp) == False and math.isnan(humidity) == False:
