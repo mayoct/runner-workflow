@@ -32,4 +32,4 @@ workflows:
       - test_on_arm-runner
       - review_on_cloud:
           requires:
-            - prepare
+            - test_on_arm-runner
