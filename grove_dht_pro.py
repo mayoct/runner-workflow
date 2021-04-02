@@ -39,7 +39,7 @@ import math
 # Connect the Grove Temperature & Humidity Sensor Pro to digital port D4
 # This example uses the blue colored sensor.
 # SIG,NC,VCC,GND
-sensor = 5  # The Sensor goes on digital port 4.
+sensor = 4  # The Sensor goes on digital port 4.
 
 # temp_humidity_sensor_type
 # Grove Base Kit comes with the blue sensor.
@@ -49,6 +49,7 @@ white = 1   # The White colored sensor.
 i = 0
 
 while i < 10:
+    i += 1
     try:
         # This example uses the blue colored sensor. 
         # The first parameter is the port, the second parameter is the type of sensor.
@@ -58,5 +59,3 @@ while i < 10:
 
     except IOError:
         print ("Error")
-    
-    i += 1
