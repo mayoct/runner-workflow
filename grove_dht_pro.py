@@ -36,7 +36,6 @@ THE SOFTWARE.
 '''
 import grovepi
 import math
-import time
 # Connect the Grove Temperature & Humidity Sensor Pro to digital port D4
 # This example uses the blue colored sensor.
 # SIG,NC,VCC,GND
@@ -55,9 +54,8 @@ while i < 10:
         # The first parameter is the port, the second parameter is the type of sensor.
         [temp,humidity] = grovepi.dht(sensor,white)  
         if math.isnan(temp) == False and math.isnan(humidity) == False:
-            print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
+            print("temp = %.02f C humidity =%.02f%%"%(temp, humidity), flush=True)
     except IOError:
         print ("Error")
     finally:
         i += 1
-        time.sleep(1)
