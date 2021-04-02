@@ -21,7 +21,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: sudo ./lcd_runner.sh
+      - run: sudo python grove_dht_pro.py
 
 workflows:
   version: 2
