@@ -57,5 +57,4 @@ while i < 10:
             print("temp = %.02f C humidity =%.02f%%"%(temp, humidity))
     except IOError:
         print ("Error")
-    finally:
-        i += 1
+    i += 1
