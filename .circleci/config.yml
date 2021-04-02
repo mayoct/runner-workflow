@@ -21,7 +21,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: cat tmp/hello.txt
+      - run: lcd_runner.sh
 
 workflows:
   version: 2
