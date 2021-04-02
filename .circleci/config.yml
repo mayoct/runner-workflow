@@ -16,7 +16,7 @@ jobs:
             - "tmp"
   arm-runner:
     machine: true
-    resource_class: mayoct/azure-runner
+    resource_class: mayoct/arm-runner
     steps:
       - checkout
       - attach_workspace:
