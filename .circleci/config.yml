@@ -21,7 +21,7 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - run: lcd_runner.sh
+      - run: ./lcd_runner.sh
 
 workflows:
   version: 2
