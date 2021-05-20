@@ -37,6 +37,8 @@ THE SOFTWARE.
 import grovepi
 import math
 import time
+from grove_rgb_lcd import *
+
 # Connect the Grove Temperature & Humidity Sensor Pro to digital port D4
 # This example uses the blue colored sensor.
 # SIG,NC,VCC,GND
@@ -47,6 +49,10 @@ sensor = 2  # The Sensor goes on digital port 2.
 blue = 0    # The Blue colored sensor.
 white = 1   # The White colored sensor.
 
+# Background color
+bgcolor = [[0,255,0],[255,0,0],[0,255,0],[0,0,255],[255,255,0],[255,0,255],[0,255,255],[255,255,255],[0,0,0],[127,127,127]]
+
+
 i = 0
 
 while i < 10:
@@ -56,6 +62,8 @@ while i < 10:
         [temp,humidity] = grovepi.dht(sensor,white)  
         if math.isnan(temp) == False and math.isnan(humidity) == False:
             print("temp = %.02f C humidity =%.02f%%"%(temp, humidity), flush=True)
+            setText("CircleCI Runner\n%.02f C, %.02f %%"%(temp, humidity))
+            setRGB(c[i][0], c[i][1], c[i][2])
     except IOError:
         print ("Error")
     finally:
